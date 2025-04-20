@@ -42,7 +42,7 @@ names: ["laptop", "tablet", "group_box", "phone"]
 ```
 После обучения возьмите runs/train/new_boxes/weights/best.pt и положите в app/model/.
 ### Шаг 5 — Правка кода
-> _Откройте `ForDocker.py`._
+> _Откройте `detect_and_count.py`._
 
 1. Константа `COLUMNS_CSV`: добавьте новый столбец _в конец_ списка, например:
    ```
