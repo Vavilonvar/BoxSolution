@@ -5,7 +5,7 @@ Solving the case from the YADRO™`s DubnaTECH
     После запуска `docker‑compose up --build` в каталоге `results/` генерируется CSV‑отчёт `results.csv` со статистикой по каждому подкаталогу в `images/`.
 
 ---
-    # Добавление нового типа коробки
+# Добавление нового типа коробки
 Ниже приведён канонический пошаговый процесс расширения модели и кода для нового класса, например phone.
 
 ### Шаг 1 — Сбор данных
@@ -45,7 +45,8 @@ names: ["laptop", "tablet", "group_box", "phone"]
 > _Откройте `ForDocker.py`._
 
 1. Константа `COLUMNS_CSV`: добавьте новый столбец _в конец_ списка, например:
-   ``` COLUMNS_CSV = ['dir_name', 'laptop', 'tablet', 'group_box', 'phone']
+   ```
+   COLUMNS_CSV = ['dir_name', 'laptop', 'tablet', 'group_box', 'phone']
    ```
 2. Словарь `counts` (внутри detection_proccess) автоматически формируется из COLUMNS_CSV[1:], если скрипт написан как выше. Если использована фиксированная конструкция — добавьте ключ phone: 0.
 
