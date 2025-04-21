@@ -4,9 +4,8 @@ services:
   yolo_detector:
     build: .
     volumes:
-      - ./images:/images:ro
-      - ./weights:/weights:ro
-      - ./results:/app/results
+      - ./images:/images:ro          # изображения
+      - ./weights:/app/model:ro      # монтируем weights туда, где YOLO его ждёт
+      - ./results:/app/results       # куда сохранять CSV
     working_dir: /app
-    # при запуске выполняется наш скрипт
     command: ["python", "detect_and_count.py"]
