@@ -9,7 +9,7 @@ import pandas as pd
 # Путь до фотографий
 IMAGES_DIR = '/images'
 # Путь для сохранения результатов
-CSV_PATH = '/results/results.csv'
+CSV_PATH = '/app/results/results.csv'
 # Путь до весов модели
 MODEL_PATH = '/app/model/best.pt'
 
