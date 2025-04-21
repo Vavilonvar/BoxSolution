@@ -51,4 +51,7 @@ names: ["laptop", "tablet", "group_box", "phone"]
 2. Словарь `counts` (внутри detection_proccess) автоматически формируется из COLUMNS_CSV[1:], если скрипт написан как выше. Если использована фиксированная конструкция — добавьте ключ phone: 0.
 
 
+-------------------------------
+Рабочая структура 
+![image](https://github.com/user-attachments/assets/541e60f1-1db8-48c6-a542-12ff1848c398)
 
