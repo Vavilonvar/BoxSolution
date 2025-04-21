@@ -1,20 +1,20 @@
-
 FROM python:3.9-slim
 
-# Устанавливаем git и копируем репозиторий YOLOv5
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# Устанавливаем системные библиотеки (git + OpenCV-зависимости)
+RUN apt-get update && \
+    apt-get install -y git libgl1 libglib2.0-0 && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Клонируем YOLOv5 и устанавливаем зависимости
+# Клонируем YOLOv5 и ставим зависимости
 RUN git clone https://github.com/ultralytics/yolov5.git /app/yolov5 && \
     pip install --no-cache-dir -r /app/yolov5/requirements.txt pandas
 
-# Копируем наш скрипт
+# Копируем твой скрипт
 COPY detect_and_count.py /app/
 
 # Создаём папку для результатов
 RUN mkdir -p /app/results
 
-# По умолчанию запускаем скрипт
 CMD ["python", "detect_and_count.py"]
