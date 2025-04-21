@@ -11,7 +11,7 @@ WORKDIR /app
 RUN git clone https://github.com/ultralytics/yolov5.git /app/yolov5 && \
     pip install --no-cache-dir -r /app/yolov5/requirements.txt pandas
 
-# Копируем твой скрипт
+# Копируем скрипт
 COPY detect_and_count.py /app/
 
 # Создаём папку для результатов
